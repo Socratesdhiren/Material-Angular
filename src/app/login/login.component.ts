@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   createForm() {
     this.loginForm = this.formBuilder.group({
-      user_name: ['', Validators.required],
+      user_name: ['', Validators.required, Validators.email],
       password: ['', Validators.required],
     });
     // get return url form route parameters or detail to '/'
