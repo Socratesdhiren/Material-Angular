@@ -1,0 +1,38 @@
+
+
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title matCardTitle></mat-card-title>
+      </mat-card-header>
+
+    <mat-form-field floatLabel="never" class="form-element">
+      <label>
+        <input type="text" matInput placeholder="Username" formControlName="user_name">
+      </label>
+      <span *ngIf=" submitted && loginForm.controls.user_name.errors">
+                        <small class="form-text error" *ngIf="loginForm.controls.user_name.errors.required" >Username is required
+                        </small>
+                    </span>
+    </mat-form-field>
+
+    <mat-form-field floatLabel="never" class="form-element">
+      <label>
+        <input type="password" matInput placeholder="Password" formControlName="password">
+      </label>
+      <span *ngIf=" submitted && loginForm.controls.password.errors">
+                        <small class="form-text error" *ngIf="loginForm.controls.password.errors.required" >Password is required
+                        </small>
+                    </span>
+    </mat-form-field>
+
+    <div class="form-element">
+      <span *ngIf='loading' class="spinner-border spinner-border-sm mr-1"></span>
+
+      <button mat-raised-button color="primary" type="submit" class="button">Submit Form
+      </button>
+    </div>
+    </mat-card>
+  </form>
+</div>
