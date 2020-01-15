@@ -4,7 +4,7 @@ import {DashboardRoutingModule} from './dashboard-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
 
 import {MainNavModule} from '../Layout/main-nav/main-nav.module';
-import {MatTableModule} from '@angular/material';
+import {AngularMaterialModule} from '../angular-material.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import {MatTableModule} from '@angular/material';
     ReactiveFormsModule,
     MainNavModule,
     DashboardRoutingModule,
-    MatTableModule
+    AngularMaterialModule
   ],
   providers: []
 })

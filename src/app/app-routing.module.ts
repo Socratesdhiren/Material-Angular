@@ -13,6 +13,8 @@ const routes: Routes = [
   {path: 'logout', component: LoginComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'category/add', component: AddCategoryFormComponent},
+  // {path: 'category', loadChildren: () => import('./Category/category.module').then(m => m.CategoryModule)},
+
   {path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)},
   {path: '404', component: PageNotFoundComponent},
   {

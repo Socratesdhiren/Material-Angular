@@ -21,7 +21,8 @@ import {
   MatPaginatorModule,
   MatMenuModule,
   MatCardModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatCheckboxModule
 } from '@angular/material';
 
 @NgModule({
@@ -46,6 +47,7 @@ import {
     MatPaginatorModule,
     MatCardModule,
     MatMenuModule,
+    MatCheckboxModule,
     MatProgressBarModule
   ],
   exports: [
@@ -68,6 +70,7 @@ import {
     MatCardModule,
     MatMenuModule,
     MatProgressBarModule,
+    MatCheckboxModule,
   ],
   providers: [
     MatDatepickerModule,

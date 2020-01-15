@@ -37,7 +37,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getAppList() {
-   this.dashboardService.getApplist().subscribe((response) =>{
+   this.dashboardService.getApplist().subscribe((response) => {
      console.log(response, 'get ist res');
    },
    (error: any) => {

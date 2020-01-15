@@ -1,5 +1,36 @@
-
 <app-main-nav>
+  <div class="container-fluid">
+    <section class="mat-typography mat-headline">
+      <h1>Add New Category</h1>
+    </section>
+    <mat-card>
 
-<p>add-category-form works!</p>
+    <form [formGroup]="categoryAddForm" (ngSubmit)="onSubmit()" class="category-form">
+        <div class="container category-form">
+          <mat-card-content>
+            <mat-form-field class="full-width">
+              <label>
+                <input matInput placeholder="Name" required formControlName="title">
+              </label>
+<!--                              <mat-error *ngIf="submitted && categoryAddForm.controls.name.errors && categoryAddForm.controls.name.errors.required">-->
+<!--                                Name is required.-->
+<!--                              </mat-error>-->
+            </mat-form-field>
+            <mat-checkbox formControlName="enable" class="full-width"></mat-checkbox>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div class="form-element">
+              <span class="spinner-border spinner-border-sm mr-1"></span>
+              <button mat-raised-button color="primary" type="submit" class="button">Add Form
+              </button>
+            </div>
+
+          </mat-card-content>
+        </div>
+    </form>
+    </mat-card>
+
+  </div>
 </app-main-nav>

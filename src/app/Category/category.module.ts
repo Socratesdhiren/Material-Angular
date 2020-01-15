@@ -7,6 +7,9 @@ import {ReactiveFormsModule} from '@angular/forms';
 
 import {MainNavModule} from '../Layout/main-nav/main-nav.module';
 import {AngularMaterialModule} from '../angular-material.module';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {AuthInterceptors} from '../helpers/authInterceptor';
+import {AuthGuardService} from '../helpers/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,11 @@ import {AngularMaterialModule} from '../angular-material.module';
     ReactiveFormsModule,
     MainNavModule,
     CategoryRoutingModule,
-    AngularMaterialModule  ],
-  providers: []
+    AngularMaterialModule,
+  ],
+  providers: [AuthGuardService,
+    {
+    provide: HTTP_INTERCEPTORS, useClass: AuthInterceptors, multi: true
+  }]
 })
 export class CategoryModule { }
