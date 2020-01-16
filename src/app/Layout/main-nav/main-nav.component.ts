@@ -8,7 +8,10 @@ import {MediaMatcher} from '@angular/cdk/layout';
 })
 export class MainNavComponent  implements OnDestroy {
   mobileQuery: MediaQueryList;
-
+  isExpanded = true;
+  showSubmenu = false;
+  isShowing = false;
+  showSubSubMenu = false;
   // tslint:disable-next-line:variable-name
   private _mobileQueryListener: () => void;
 

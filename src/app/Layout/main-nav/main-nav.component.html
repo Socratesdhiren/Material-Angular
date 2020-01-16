@@ -22,15 +22,43 @@
           <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
           Dashboard </a>
 
-        <a mat-list-item [routerLink]="['/category/add']">
+        <!--        <a mat-list-item >-->
+        <!--          <mat-icon class="menu-icon">voicemail</mat-icon>-->
+        <!--          Category</a>-->
+      </mat-nav-list>
+      <mat-nav-list>
+        <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
           <mat-icon class="menu-icon">voicemail</mat-icon>
-          Category</a>
+          <span class="full-width" *ngIf="isExpanded || isShowing">Category</span>
+          <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
+            expand_more
+          </mat-icon>
+        </mat-list-item>
+        <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+          <a mat-list-item [routerLink]="['/category/add']">
+            <mat-icon class="menu-icon">add</mat-icon>
+            Add</a>
+          <a mat-list-item [routerLink]="['/category']">
+            <mat-icon class="menu-icon">list</mat-icon>
+            List</a>
+
+          <!--          <mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">-->
+          <!--            <span class="full-width" *ngIf="isExpanded || isShowing">Nested Menu</span>-->
+          <!--            <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>-->
+          <!--          </mat-list-item>-->
+          <!--          <div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">-->
+          <!--            <mat-list-item>SubSubmenu Item 1</mat-list-item>-->
+          <!--            <mat-list-item>SubSubmenu Item 2</mat-list-item>-->
+          <!--          </div>-->
+        </div>
+      </mat-nav-list>
+      <mat-nav-list>
       </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
-   <ng-content>
-   </ng-content>
+      <ng-content>
+      </ng-content>
     </mat-sidenav-content>
 
 

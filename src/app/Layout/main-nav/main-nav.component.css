@@ -48,3 +48,14 @@ h1.main-nav-layout-app-name {
 .mat-drawer-inner-container {
   width: 200px !important;
 }
+
+.submenu {
+  overflow-y: hidden;
+  transition: transform 300ms ease;
+  transform: scaleY(0);
+  transform-origin: top;
+  padding-left: 30px;
+}
+.submenu.expanded {
+  transform: scaleY(1);
+}

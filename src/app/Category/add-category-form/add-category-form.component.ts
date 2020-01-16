@@ -17,13 +17,11 @@ export class AddCategoryFormComponent implements OnInit {
               private route: ActivatedRoute,
               private router: Router,
               private category: CategoryService) {
-    // {
-    //   this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/category';
-    // }
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/category';
   }
 
   ngOnInit() {
-    this.getCategorylist();
+    // this.getCategorylist();
     this.createForm();
   }
 
@@ -32,8 +30,6 @@ export class AddCategoryFormComponent implements OnInit {
       title: ['', Validators.required],
       enable: [''],
     });
-    // get return url form route parameters or detail to '/'
-    // this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
   }
 
   onSubmit() {
@@ -54,14 +50,5 @@ export class AddCategoryFormComponent implements OnInit {
     }, (error: any) => {
       console.log('eroror', error);
     });
-  }
-
-  getCategorylist() {
-    this.category.getCategorylist().subscribe((response) => {
-        console.log(response, 'get ist res');
-      },
-      (error: any) => {
-        console.log(error, 'error');
-      });
   }
 }
