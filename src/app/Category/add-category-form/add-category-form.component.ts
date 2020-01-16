@@ -13,6 +13,9 @@ export class AddCategoryFormComponent implements OnInit {
   loading: boolean;
   submitted = false;
   returnUrl: string;
+  errorMessage: string;
+  isError: boolean;
+
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
               private router: Router,
@@ -45,10 +48,13 @@ export class AddCategoryFormComponent implements OnInit {
     console.log('formVA', JSON.stringify(formValues));
     this.category.addCategory(formValues.title, formValues.enable).subscribe((response: any) => {
       console.log(response, 'response');
-      console.log('this.returnUrl', this.returnUrl);
-      // this.router.navigateByUrl(this.returnUrl).then(() => location.reload());
+      // console.log('this.returnUrl', this.returnUrl);
+      this.router.navigateByUrl(this.returnUrl).then(() => location.reload());
     }, (error: any) => {
-      console.log('eroror', error);
+      console.log('eroror', error.error.message);
+      this.errorMessage = error.error.message;
+      this.isError = true;
+      console.log('isError', this.isError);
     });
   }
 }
