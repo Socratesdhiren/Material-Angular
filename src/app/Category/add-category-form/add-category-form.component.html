@@ -3,24 +3,22 @@
     <section class="mat-typography mat-headline">
       <h1>Add New Category</h1>
     </section>
-
-    <mat-toolbar class="mat-error-message">
+    <mat-toolbar *ngIf="isError" class="mat-error-message">
       <span class="message-error">{{errorMessage}}</span>
     </mat-toolbar>
 
 
     <mat-card>
 
-      <form [formGroup]="categoryAddForm" (ngSubmit)="onSubmit()" class="category-form">
+      <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()" class="category-form">
         <div class="container category-form">
-          <mat-card-content>
             <mat-form-field class="full-width">
               <label>
                 <input matInput placeholder="Title" required formControlName="title">
               </label>
-              <!--                              <mat-error *ngIf="submitted && categoryAddForm.controls.name.errors && categoryAddForm.controls.name.errors.required">-->
-              <!--                                Name is required.-->
-              <!--                              </mat-error>-->
+                                            <mat-error *ngIf="submitted && categoryForm.controls.title.errors && categoryForm.controls.title.errors.required">
+                                              Title is required.
+                                            </mat-error>
             </mat-form-field>
             <mat-checkbox formControlName="enable" class="full-width"></mat-checkbox>
             <br/>
@@ -33,7 +31,6 @@
               </button>
             </div>
 
-          </mat-card-content>
         </div>
       </form>
     </mat-card>

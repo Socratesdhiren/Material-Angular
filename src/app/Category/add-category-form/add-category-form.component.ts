@@ -9,7 +9,7 @@ import {CategoryService} from '../../services/category.service';
   styleUrls: ['./add-category-form.component.css']
 })
 export class AddCategoryFormComponent implements OnInit {
-  categoryAddForm: FormGroup;
+  categoryForm: FormGroup;
   loading: boolean;
   submitted = false;
   returnUrl: string;
@@ -29,22 +29,21 @@ export class AddCategoryFormComponent implements OnInit {
   }
 
   createForm() {
-    this.categoryAddForm = this.formBuilder.group({
+    this.categoryForm = this.formBuilder.group({
       title: ['', Validators.required],
       enable: [''],
     });
   }
-
   onSubmit() {
     this.submitted = true;
     // stop here if form is invalid
-    if (this.categoryAddForm.invalid) {
+    if (this.categoryForm.invalid) {
       return;
     }
-    console.log('here ia ma', this.categoryAddForm.invalid);
+    console.log('here ia ma', this.categoryForm.invalid);
 
     this.loading = true;
-    const formValues = this.categoryAddForm.value;
+    const formValues = this.categoryForm.value;
     console.log('formVA', JSON.stringify(formValues));
     this.category.addCategory(formValues.title, formValues.enable).subscribe((response: any) => {
       console.log(response, 'response');

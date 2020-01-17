@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminAuthenticationService {
+export class AuthenticationService {
 
   /**
    * get url for API defined in environment file
