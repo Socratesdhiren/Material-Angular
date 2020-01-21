@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminAuthenticationService {
+export class AuthenticationService {
 
   /**
    * get url for API defined in environment file
@@ -28,13 +28,13 @@ export class AdminAuthenticationService {
   /**
    * makes a POST request to administrator login API
    *
-   * @param {object, number} - object of type Login class.
+   * @param {object} - object of type Login class.
    *
    * @returns user informations such as name and jwt tokens
    */
-  // tslint:disable-next-line:variable-name
+
   login(username: string, password: string) {
-    return this.http.post(this.baseUrl + 'login' , {user_name: username,password: password});
+    return this.http.post(this.baseUrl + 'login' , {user_name: username, password: password});
   }
 
   /**

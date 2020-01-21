@@ -17,9 +17,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { MainNavModule } from './Layout/main-nav/main-nav.module';
 import {AuthGuardService} from './helpers/auth-guard.service';
 import {AuthInterceptors} from './helpers/authInterceptor';
-import { AddCategoryFormComponent } from './Category/add-category-form/add-category-form.component';
-import { CategoryListComponent } from './Category/category-list/category-list.component';
-import { EditCategoryFormComponent } from './Category/edit-category-form/edit-category-form.component';
+import { CategoryModule } from './Category/category.module';
 
 @NgModule({
   declarations: [
@@ -28,9 +26,6 @@ import { EditCategoryFormComponent } from './Category/edit-category-form/edit-ca
     AppHeaderComponent,
     UserBoxComponent,
     PageNotFoundComponent,
-    AddCategoryFormComponent,
-    CategoryListComponent,
-    EditCategoryFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +36,8 @@ import { EditCategoryFormComponent } from './Category/edit-category-form/edit-ca
     ReactiveFormsModule,
     AngularMaterialModule,
     DashboardModule,
-    MainNavModule
+    MainNavModule,
+    CategoryModule,
   ],
   providers: [AuthGuardService,
     {

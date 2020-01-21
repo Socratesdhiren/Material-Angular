@@ -1,1 +1,48 @@
-<p>category-list works!</p>
+<app-main-nav>
+  <div class="container-fluid">
+    <section class="mat-typography mat-headline">
+      <h1>Category List</h1>
+    </section>
+    <mat-toolbar *ngIf="isError" class="mat-error-message">
+      <span class="message-error">{{errorMessage}}</span>
+    </mat-toolbar>
+    <mat-card>
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="categoryLists">
+
+          <!-- Position Column -->
+          <!--          <ng-container matColumnDef="id">-->
+          <!--            <th mat-header-cell *matHeaderCellDef> No. </th>-->
+          <!--            <td mat-cell *matCellDef="let element"> {{element.id}} </td>-->
+          <!--          </ng-container>-->
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef> Title</th>
+            <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="enable">
+            <th mat-header-cell *matHeaderCellDef> Status</th>
+            <td mat-cell *matCellDef="let element"> {{element.enable}} </td>
+          </ng-container>
+
+          <!-- Action Column -->
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action</th>
+            <td mat-cell *matCellDef="let element" class="action-link">
+              <a [routerLink]="['/category/edit/',element.id]">Edit</a>
+<!--              |-->
+<!--              <a>Delete</a>-->
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      </div>
+    </mat-card>
+  </div>
+</app-main-nav>

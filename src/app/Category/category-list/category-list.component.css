@@ -1,0 +1,22 @@
+.mat-headline{
+  margin-left: 1rem;
+  margin-top: 10px;
+}
+
+.container-fluid {
+  padding-top: 1.5em;
+  padding-bottom: 1em;
+}
+.container-fluid {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+table {
+  width: 100%;
+}

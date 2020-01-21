@@ -23,7 +23,6 @@ export class AuthInterceptors implements HttpInterceptor {
 
       const user = JSON.parse(localStorage.getItem('user'));
       this.token = user.token;
-      console.log('user data', user);
       const authReq = req.clone({setHeaders: {'x-finpulse-token': this.token}
     })
       ;

@@ -33,11 +33,11 @@ export class DashboardComponent implements OnInit {
   constructor(private  dashboardService: DashboardService) { }
 
   ngOnInit() {
-    this.getAppList();
+    // this.getAppList();
   }
 
-  getAppList(){
-   this.dashboardService.getApplist().subscribe((response) =>{
+  getAppList() {
+   this.dashboardService.getApplist().subscribe((response) => {
      console.log(response, 'get ist res');
    },
    (error: any) => {
