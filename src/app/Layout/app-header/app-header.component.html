@@ -1,18 +1,23 @@
 <header class="main-header" >
-<mat-toolbar color="primary" class="main-nav-layout-toolbar">
-  <button mat-icon-button (click)="snav.toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <h1 class="main-nav-layout-app-name">Angular App</h1>
-  <span class="profile_menu"></span>
-  <mat-icon class="profile-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user
-  </mat-icon>
-  <button mat-button [matMenuTriggerFor]="menu">Dhiren</button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>View Profile</button>
-    <mat-divider></mat-divider>
-    <button mat-menu-item (click)="logOut()">LogOut</button>
-  </mat-menu>
-</mat-toolbar>
-
+  <mat-toolbar color="primary" class="main-nav-layout-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="main-nav-layout-app-name">Angular App</h1>
+    <span class="profile_menu"></span>
+    <mat-icon class="profile-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user
+    </mat-icon>
+    <button mat-button [matMenuTriggerFor]="menu">Dhiren</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon class="menu-icon">account_circle</mat-icon>
+        View Profile
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="logOut()">
+        <mat-icon class="menu-icon">power_settings_new</mat-icon>
+        LogOut
+      </button>
+    </mat-menu>
+  </mat-toolbar>
 </header>

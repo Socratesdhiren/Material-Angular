@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
   loading: boolean;
   submitted = false;
   returnUrl: string;
+  errorMessage: string;
+  isError: boolean;
 
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
@@ -51,6 +53,8 @@ export class LoginComponent implements OnInit {
       console.log('this.returnUrl', this.returnUrl);
       this.router.navigateByUrl(this.returnUrl).then(() => location.reload());
     }, (error: any) => {
+      this.errorMessage = error.error.message || 'Server issue';
+      this.isError = true;
       console.log('eroror', error);
     });
   }

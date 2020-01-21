@@ -1,1 +1,35 @@
-<p>edit-category-form works!</p>
+<app-main-nav>
+  <div class="container-fluid">
+    <section class="mat-typography mat-headline">
+      <h1>Edit Category</h1>
+    </section>
+    <mat-toolbar *ngIf="isError" class="mat-error-message">
+      <span class="message-error"></span>
+    </mat-toolbar>
+    <mat-card>
+      <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()" class="category-form">
+        <div class="container category-form">
+          <mat-form-field class="full-width">
+            <label>
+              <input matInput placeholder="Title" formControlName="title" [(ngModel)]="categories.title" required>
+            </label>
+            <mat-error
+              *ngIf="submitted && categoryForm.controls.title.errors && categoryForm.controls.title.errors.required">
+              Title is required.
+            </mat-error>
+          </mat-form-field>
+          <mat-checkbox formControlName="enable" class="full-width" [(ngModel)]="categories.enable">Enable
+          </mat-checkbox>
+
+          <div class="form-element" style="margin-top: 20px">
+            <span class="spinner-border spinner-border-sm mr-1"></span>
+            <button mat-raised-button color="primary" type="submit" class="button">Edit Form
+            </button>
+          </div>
+
+        </div>
+      </form>
+    </mat-card>
+
+  </div>
+</app-main-nav>

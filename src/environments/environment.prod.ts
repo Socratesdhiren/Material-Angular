@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://dev.citytech.global/tms/v1/'
+  baseUrl: 'http://110.44.123.13:13330/v1/'
 };

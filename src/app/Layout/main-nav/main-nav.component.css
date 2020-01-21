@@ -56,6 +56,7 @@ h1.main-nav-layout-app-name {
   transform-origin: top;
   padding-left: 30px;
 }
+
 .submenu.expanded {
   transform: scaleY(1);
 }

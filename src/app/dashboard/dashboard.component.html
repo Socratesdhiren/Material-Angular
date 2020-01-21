@@ -1,5 +1,9 @@
 
 <app-main-nav>
+  <div class="container-fluid">
+    <section class="mat-typography mat-headline">
+      <h1>Dashboard</h1>
+    </section>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
@@ -32,5 +36,6 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  </div>
 </app-main-nav>
 

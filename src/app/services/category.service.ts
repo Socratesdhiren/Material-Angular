@@ -28,19 +28,32 @@ export class CategoryService {
   constructor(private http: HttpClient) {}
 
   /**
-   * makes a get request to get the app list
+   * makes a get request to get the category list
    *
    */
-
   getCategorylist() {
     return this.http.get(this.baseUrl + 'categories', {headers: this.authHeader});
   }
+  /**
+   * makes a get request to get the category by identifier,
+   * @param {string } identifier
+   *
+   */
+  getCategoryByIdentifier(identifier) {
+    return this.http.get(this.baseUrl + 'categories' + '/' + `${identifier}`, {headers: this.authHeader});
+  }
 
   /**
-   * Add a get request to get the app list
+   * Add a post request to submit the data
    */
-
   addCategory(title: string, enable: boolean) {
     return this.http.post(this.baseUrl + 'categories', {title: title, enable: enable}, {headers: this.authHeader});
+  }
+
+  /**
+   * Add a post request to update category
+   */
+  editCategory(title: string, enable: boolean, id:string) {
+    return this.http.post(this.baseUrl + 'categories', {title: title, enable: enable, id:id}, {headers: this.authHeader});
   }
 }

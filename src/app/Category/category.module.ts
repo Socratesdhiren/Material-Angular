@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {MainNavModule} from '../Layout/main-nav/main-nav.module';
@@ -20,13 +20,14 @@ import {CategoryRoutingModule} from './category-routing.module';
     CategoryListComponent,
     EditCategoryFormComponent
 ],
-  imports: [
-    ReactiveFormsModule,
-    CommonModule,
-    MainNavModule,
-    CategoryRoutingModule,
-    AngularMaterialModule,
-  ],
+    imports: [
+        ReactiveFormsModule,
+        CommonModule,
+        MainNavModule,
+        CategoryRoutingModule,
+        AngularMaterialModule,
+        FormsModule,
+    ],
   providers: [AuthGuardService,
     {
     provide: HTTP_INTERCEPTORS, useClass: AuthInterceptors, multi: true

@@ -24,7 +24,6 @@ export class AddCategoryFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.getCategorylist();
     this.createForm();
   }
 
@@ -32,6 +31,7 @@ export class AddCategoryFormComponent implements OnInit {
     this.categoryForm = this.formBuilder.group({
       title: ['', Validators.required],
       enable: [''],
+      id: ['']
     });
   }
   onSubmit() {

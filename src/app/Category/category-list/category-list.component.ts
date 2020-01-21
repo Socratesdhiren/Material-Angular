@@ -10,8 +10,10 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./category-list.component.css']
 })
 export class CategoryListComponent implements OnInit {
-  displayedColumns: string[] = ['title', 'enable' ];
+  displayedColumns: string[] = ['title', 'enable' , 'action'];
   categoryLists: CategoryList[];
+  errorMessage: string;
+  isError: boolean;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
@@ -33,6 +35,8 @@ export class CategoryListComponent implements OnInit {
       },
       (error: any) => {
         console.log(error, 'error');
+        this.errorMessage = error.error.message;
+        this.isError = true;
       });
   }
 }

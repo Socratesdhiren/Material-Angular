@@ -12,4 +12,8 @@ export class AppFooterComponent implements OnInit {
   ngOnInit() {
   }
 
+  logOut() {
+    localStorage.clear();
+    window.location.reload();
+  }
 }

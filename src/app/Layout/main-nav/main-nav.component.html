@@ -9,9 +9,15 @@
     </mat-icon>
     <button mat-button [matMenuTriggerFor]="menu">Dhiren</button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>View Profile</button>
+      <button mat-menu-item>
+        <mat-icon class="menu-icon">account_circle</mat-icon>
+        View Profile
+      </button>
       <mat-divider></mat-divider>
-      <button mat-menu-item (click)="logOut()">LogOut</button>
+      <button mat-menu-item (click)="logOut()">
+        <mat-icon class="menu-icon">power_settings_new</mat-icon>
+        LogOut
+      </button>
     </mat-menu>
   </mat-toolbar>
   <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
@@ -21,10 +27,6 @@
         <a mat-list-item [routerLink]="['/dashboard']">
           <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
           Dashboard </a>
-
-        <!--        <a mat-list-item >-->
-        <!--          <mat-icon class="menu-icon">voicemail</mat-icon>-->
-        <!--          Category</a>-->
       </mat-nav-list>
       <mat-nav-list>
         <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
@@ -60,7 +62,6 @@
       <ng-content>
       </ng-content>
     </mat-sidenav-content>
-
 
 
   </mat-sidenav-container>
