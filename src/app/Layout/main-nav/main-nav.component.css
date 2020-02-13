@@ -60,3 +60,21 @@ h1.main-nav-layout-app-name {
 .submenu.expanded {
   transform: scaleY(1);
 }
+
+.mat-menu-item .mat-icon {
+   margin-right: 0;
+}
+
+mat-sidenav {
+  width: 230px;
+}
+
+/*mat-sidenav-content{*/
+/*  height: 900px;*/
+/*}*/
+
+
+.app-menu-layout.mat-icon {
+  right: 6px;
+  position: absolute;
+}

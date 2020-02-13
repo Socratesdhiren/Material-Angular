@@ -4,7 +4,7 @@
       <h1>Edit Category</h1>
     </section>
     <mat-toolbar *ngIf="isError" class="mat-error-message">
-      <span class="message-error"></span>
+      <span class="message-error">{{errorMessage}}</span>
     </mat-toolbar>
     <mat-card>
       <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()" class="category-form">
@@ -18,7 +18,7 @@
               Title is required.
             </mat-error>
           </mat-form-field>
-          <mat-checkbox formControlName="enable" class="full-width" [(ngModel)]="categories.enable">Enable
+          <mat-checkbox formControlName="enable" class="full-width" [(ngModel)]="categories.enable" color="primary">Enable
           </mat-checkbox>
 
           <div class="form-element" style="margin-top: 20px">

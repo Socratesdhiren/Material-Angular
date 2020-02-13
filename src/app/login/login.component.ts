@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
               private router: Router,
               private auth: AuthenticationService,
   ) {
-    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/dashboard';
+    this.returnUrl = '/dashboard';
   }
 
   ngOnInit() {
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
     this.auth.login(formValues.user_name, formValues.password).subscribe((response: any) => {
       localStorage.setItem('user', JSON.stringify(response.data));
       console.log('this.returnUrl', this.returnUrl);
-      this.router.navigateByUrl(this.returnUrl).then(() => location.reload());
+      this.router.navigateByUrl(this.returnUrl);
     }, (error: any) => {
       this.errorMessage = error.error.message || 'Server issue';
       this.isError = true;
